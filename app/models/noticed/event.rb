@@ -12,7 +12,7 @@ module Noticed
 
     scope :newest_first, -> { order(created_at: :desc) }
 
-    attribute :params, :json, default: {}
+    attribute :params, default: {}
 
     # Ephemeral notifiers cannot serialize params since they aren't ActiveRecord backed
     if respond_to? :serialize
